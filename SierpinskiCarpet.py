@@ -44,19 +44,22 @@ def make_carpets(n, carpet_color, hole_color):
         yield carpet
         
 def random_color():
+    """
+    Generate a random hex color.
+    """
     r = lambda: random.randint(0,255)
     return('#%02X%02X%02X' % (r(),r(),r()))
 
 def main():
-    N = 5
+    N = 7
     
     carpet_color = random_color()
     hole_color = random_color()
 
     carpets = make_carpets(N, carpet_color=carpet_color, hole_color=hole_color)
-    durations = [600] * N               # 1200ms per frame, except...
+    durations = [800] * N               # 1200ms per frame, except...
     durations[0] //= 2                  # first frame is shorter
-    durations[-1] *= 1.5                # final frame is longer
+    durations[-1] *= 1.25               # final frame is longer
 
     save_animated_gif("SierpinskiCarpet.gif", carpets, durations)
 
