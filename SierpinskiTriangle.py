@@ -38,8 +38,8 @@ def make_triangles(n, triangle_color, background_color):
     Generate n PIL Images, each of Sierpiński's triangle with increasing levels
     of detail.
     """
-    image_width = 343
-    image_height = 297 
+    image_width = 690
+    image_height = 600   
     image = Image.new("RGBA", (image_width, image_height), background_color)
     yield image
     image = image.copy()
@@ -52,12 +52,12 @@ def make_triangles(n, triangle_color, background_color):
     draw = ImageDraw.Draw(image)
     # draw frist hole
     punch_hole(draw, image_width/2, 0, image_width, background_color)
-    #draw.polygon([(image_size/2,image_size), (image_size/4, image_size/2), (3*image_size/4,image_size/2)], fill = background_color)
+    image_width = image_width/2
     yield image
     for i in [-1, 0, 1]:
         image = image.copy()
         draw = ImageDraw.Draw(image)
-        punch_hole(draw, image_width/2 + (i*image_width/4), abs(i) * (math.sqrt(3) * image_width/4), image_width/2, background_color)
+        punch_hole(draw, image_width + (i*image_width/2), abs(i) * (math.sqrt(3) * image_width/2), image_width, background_color)
     yield image
 
         
@@ -74,8 +74,6 @@ def main():
     triangle_color = random_color()
     background_color = random_color()
     
-    #image = Image.new("RGBA", (N*3, N*3), background_color)
-
     triangles = make_triangles(N, triangle_color=triangle_color, background_color=background_color)
     durations = [800] * 6
 

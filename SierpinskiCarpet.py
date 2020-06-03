@@ -57,7 +57,7 @@ def main():
     hole_color = random_color()
 
     carpets = make_carpets(N, carpet_color=carpet_color, hole_color=hole_color)
-    durations = [800] * N               # 1200ms per frame, except...
+    durations = [800] * N               # 800ms per frame, except...
     durations[0] //= 2                  # first frame is shorter
     durations[-1] *= 1.25               # final frame is longer
 
