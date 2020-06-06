@@ -53,7 +53,7 @@ def save_animated_gif(filename, images, durations):
     milliseconds to display each frame, and should be of the same length as
     images.
     """
-    #set up images and times to play GIF forward and back
+    #set up images and durations to play GIF forward and back
     first_image, *other_images = images
     backwards_images = other_images[::-1]
     all_images = other_images + backwards_images + [first_image]
@@ -63,6 +63,7 @@ def save_animated_gif(filename, images, durations):
     first_image.save(fp="SierpinskiTriangle.gif", format='GIF', save_all=True, append_images=all_images, duration=durations, loop=0)
 
 def main():
+    # set up constants
     degree = 6
     image_width = 690
     image_height = 600
