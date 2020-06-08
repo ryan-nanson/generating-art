@@ -14,7 +14,7 @@ python3 SierpinskiTriangle.py
 
 ### Sierpinski Carpet
 
-![](SierpinskiCarpet.gif)
+![](output/SierpinskiCarpet.gif)
 
 The construction of the Sierpinski carpet begins with a square. The square is 
 cut into 9 congruent subsquares in a 3-by-3 grid, and the central subsquare is 
@@ -23,7 +23,7 @@ subsquares, ad infinitum.
 
 ### Sierpinski Triangle
 
-![](SierpinskiTriangle.gif)
+![](output/SierpinskiTriangle.gif)
 
 The Sierpiński triangle (sometimes spelled Sierpinski), also called the 
 Sierpiński gasket or Sierpiński sieve, is a fractal attractive fixed set with 

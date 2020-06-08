@@ -60,7 +60,7 @@ def save_animated_gif(filename, images, durations):
     durations = durations + durations
 
     logger.info("Creating GIF")
-    first_image.save(fp="SierpinskiTriangle.gif", format='GIF', save_all=True, append_images=all_images, duration=durations, loop=0)
+    first_image.save(fp=filename, format='GIF', save_all=True, append_images=all_images, duration=durations, loop=0)
 
 def main():
     # set up constants
@@ -87,10 +87,12 @@ def main():
         draw = ImageDraw.Draw(image) 
         sierpinkspi(p1, p2, p3, i, draw, image, colors)
         frames.append(image)
+        # to save each intermediate image, unccoment the line below
+        # image.save(f"output/triangle{i}.png")
     
     # set up times for gif
     durations = [800] * degree
-    save_animated_gif("SierpinskiTriangle.gif", frames, durations)
+    save_animated_gif("output/SierpinskiTriangle.gif", frames, durations)
 
 if __name__ == '__main__':
     main()

@@ -11,9 +11,8 @@ def save_animated_gif(filename, images, durations):
     milliseconds to display each frame, and should be of the same length as
     images.
     """
-    # https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html#saving
     first_image, *other_images = images
-    backwards_images = other_images[::-1] #reversing using list slicing
+    backwards_images = other_images[::-1] # reversing using list slicing
     all_images = other_images + backwards_images + [first_image]
     durations = durations + durations
     first_image.save(filename, save_all=True, append_images=all_images, duration=durations, loop=0)
@@ -42,6 +41,8 @@ def make_carpets(n, carpet_color, hole_color):
         for x, y in product(range(0, image_size, section_size), repeat=2):
             punch_hole(draw, x, y, section_size, hole_color)
         yield carpet
+        # to save each intermediate image, unccoment the line below
+        # carpet.save(f"output/carpet{section_size}.png")
         
 def random_color():
     """
@@ -61,7 +62,7 @@ def main():
     durations[0] //= 2                  # first frame is shorter
     durations[-1] *= 1.25               # final frame is longer
 
-    save_animated_gif("SierpinskiCarpet.gif", carpets, durations)
+    save_animated_gif("output/SierpinskiCarpet.gif", carpets, durations)
 
 if __name__ == '__main__':
     main()
