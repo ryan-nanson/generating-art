@@ -52,7 +52,7 @@ def random_color():
     return('#%02X%02X%02X' % (r(),r(),r()))
 
 def main():
-    N = 7
+    N = 6
     
     carpet_color = random_color()
     hole_color = random_color()

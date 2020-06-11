@@ -75,7 +75,7 @@ def main():
     colors.insert(0, triangle_color)
 
     # draw outer triangle
-    p1, p2, p3= [0, image_height], [image_width, image_height], [image_width/2, 0]
+    p1, p2, p3 = [0, image_height], [image_width, image_height], [image_width/2, 0]
     
     # draw image for each layer of the Sierpinski Triangle
     for i in range(0, degree):
@@ -85,7 +85,7 @@ def main():
         sierpinkspi(p1, p2, p3, i, draw, image, colors)
         frames.append(image)
         # to save each intermediate image, unccoment the line below
-        # image.save(f"output/triangle{i}.png")
+        image.save(f"output/triangle{i}.png")
     
     # set up times for gif
     durations = [800] * degree
