@@ -85,7 +85,7 @@ def main():
         sierpinkspi(p1, p2, p3, i, draw, image, colors)
         frames.append(image)
         # to save each intermediate image, unccoment the line below
-        image.save(f"output/triangle{i}.png")
+        #image.save(f"output/triangle{i}.png")
     
     # set up times for gif
     durations = [800] * degree
