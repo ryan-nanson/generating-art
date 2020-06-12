@@ -4,6 +4,11 @@
 from itertools import product
 from PIL import Image, ImageDraw
 import random
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger()
+
 
 def save_animated_gif(filename, images, durations):
     """
@@ -33,9 +38,11 @@ def make_carpets(n, carpet_color, hole_color):
     of detail.
     """
     image_size = 3**n
+    logger.info("drawingin initial square")
     carpet = Image.new("RGBA", (image_size, image_size), carpet_color)
     yield carpet
     for section_size in (3**i for i in range(n, 1, -1)):
+        logger.info(f"drawing inner square of size: {section_size}")
         carpet = carpet.copy()
         draw = ImageDraw.Draw(carpet)
         for x, y in product(range(0, image_size, section_size), repeat=2):
@@ -52,7 +59,7 @@ def random_color():
     return('#%02X%02X%02X' % (r(),r(),r()))
 
 def main():
-    N = 7
+    N = 6
     
     carpet_color = random_color()
     hole_color = random_color()

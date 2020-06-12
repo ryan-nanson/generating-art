@@ -60,25 +60,22 @@ def save_animated_gif(filename, images, durations):
     durations = durations + durations
 
     logger.info("Creating GIF")
-    first_image.save(fp=filename, format='GIF', save_all=True, append_images=all_images, duration=durations, loop=0)
+    first_image.save(fp=filename, format='GIF', save_all=True, 
+                     append_images=all_images, duration=durations, loop=0)
 
 def main():
     # set up constants
     degree = 6
-    image_width = 690
-    image_height = 600
+    image_width, image_height = 690, 600
     frames = []
     
     # set up colors for images and gif 
-    triangle_color = random_color()
-    background_color = random_color()
+    triangle_color, background_color = random_color(), random_color()
     colors = [background_color] * (degree - 1)
     colors.insert(0, triangle_color)
 
     # draw outer triangle
-    p1 = [0, image_height]
-    p3 = [image_width/2, 0]
-    p2 = [image_width, image_height]
+    p1, p2, p3 = [0, image_height], [image_width, image_height], [image_width/2, 0]
     
     # draw image for each layer of the Sierpinski Triangle
     for i in range(0, degree):
@@ -88,7 +85,7 @@ def main():
         sierpinkspi(p1, p2, p3, i, draw, image, colors)
         frames.append(image)
         # to save each intermediate image, unccoment the line below
-        # image.save(f"output/triangle{i}.png")
+        #image.save(f"output/triangle{i}.png")
     
     # set up times for gif
     durations = [800] * degree
