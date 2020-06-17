@@ -25,7 +25,7 @@ def circles(colors):
                                              alpha=1, ec='none'))
                 x += 2  
         savename = str('tempImage' + str(j) + '.png')
-        fig.savefig(savename, bbox_inches='tight')
+        fig.savefig(savename, bbox_inches='tight', pad_inches=0)
         plt.clf()
         
     images = []

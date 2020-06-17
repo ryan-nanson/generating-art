@@ -47,6 +47,13 @@ smaller equilateral triangles.
 A grid of circles that change colours based on a rainbow pattern. First time
 using ImageIO.
 
+### Octagon Tiles
+
+![](output/octagonTile.gif)
+
+A tile made of convex and concave octagons, with each animated to switch to 
+the other. All inspiiration and credit: http://tabletopwhale.com/colorpalette.html 
+
 
 ## Built with
 
