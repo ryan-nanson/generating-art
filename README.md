@@ -55,6 +55,13 @@ A tile made of convex and concave octagons, with each animated to switch to
 the other. All inspiiration and credit: http://tabletopwhale.com/colorpalette.html 
 
 
+### Octagon Tiles
+
+Individual tiles can be stacked to form a wall of tiles: 
+
+![](output/octagonWall.gif)
+
+
 ## Built with
 
 * [PIL](https://en.wikipedia.org/wiki/Python_Imaging_Library) - Python Imaging 
